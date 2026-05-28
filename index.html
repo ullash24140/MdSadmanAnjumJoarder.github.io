@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Md. Sadman Anjum Joarder — Mechanical Engineer & Researcher in clean energy, carbon capture, renewable energy and sustainability. Personal academic portfolio." />
+<meta name="author" content="Md. Sadman Anjum Joarder" />
+<meta name="keywords" content="Md. Sadman Anjum Joarder, Sadman Anjum Joarder, RUET, Mechanical Engineer, Carbon Capture, Clean Energy, Renewable Energy, Bangladesh Researcher, Sustainability, CCUS, Bioenergy" />
+
+<meta property="og:title" content="Md. Sadman Anjum Joarder — Researcher & Mechanical Engineer" />
+<meta property="og:description" content="Researcher in carbon capture, clean energy and renewable energy systems. Published in Springer, Elsevier, Wiley and Taylor & Francis." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/profile.jpg" />
+
+<title>Md. Sadman Anjum Joarder — Researcher & Mechanical Engineer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<style>
+/* ---------- design tokens ---------- */
+:root {
+  --bg: #0a0e1a;
+  --bg-2: #0f1424;
+  --bg-3: #161c30;
+  --surface: rgba(255,255,255,0.04);
+  --surface-2: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.08);
+  --border-strong: rgba(255,255,255,0.16);
+  --text: #e6e9f2;
+  --text-dim: #a0a8c0;
+  --text-faint: #6b7390;
+  --accent: #7c5cff;
+  --accent-2: #29d4c4;
+  --accent-3: #ff7ac6;
+  --grad-1: linear-gradient(135deg, #7c5cff 0%, #29d4c4 100%);
+  --grad-2: linear-gradient(135deg, #ff7ac6 0%, #7c5cff 100%);
+  --shadow-glow: 0 0 0 1px rgba(124,92,255,0.25), 0 20px 60px -20px rgba(124,92,255,0.4);
+  --radius: 18px;
+  --radius-sm: 12px;
+}
+[data-theme="light"] {
+  --bg: #f6f7fb;
+  --bg-2: #ffffff;
+  --bg-3: #eef0f7;
+  --surface: rgba(20,24,45,0.03);
+  --surface-2: rgba(20,24,45,0.05);
+  --border: rgba(20,24,45,0.08);
+  --border-strong: rgba(20,24,45,0.18);
+  --text: #14182d;
+  --text-dim: #4a5170;
+  --text-faint: #7a83a3;
+  --accent: #5b3df7;
+  --accent-2: #08a99a;
+  --accent-3: #d94aa5;
+}
+
+/* ---------- reset ---------- */
+*,*::before,*::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; }
+
+/* ---------- ambient background ---------- */
+.bg-aura {
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(800px circle at 12% 10%, rgba(124,92,255,0.18), transparent 50%),
+    radial-gradient(700px circle at 88% 30%, rgba(41,212,196,0.14), transparent 55%),
+    radial-gradient(700px circle at 50% 90%, rgba(255,122,198,0.10), transparent 55%);
+}
+.bg-grid {
+  position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: 0.5;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+[data-theme="light"] .bg-grid {
+  background-image:
+    linear-gradient(rgba(20,24,45,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20,24,45,0.04) 1px, transparent 1px);
+}
+
+/* ---------- nav ---------- */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 18px 0;
+  transition: backdrop-filter .25s ease, background .25s ease, padding .25s ease, border .25s ease;
+  border-bottom: 1px solid transparent;
+}
+.nav.scrolled {
+  background: color-mix(in oklab, var(--bg) 70%, transparent);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+}
+.nav-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+}
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: -0.01em; }
+.brand-mark {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: var(--grad-1);
+  display: grid; place-items: center;
+  font-family: 'Playfair Display', serif; font-weight: 700; color: white;
+  font-size: 17px;
+  box-shadow: 0 8px 24px -8px rgba(124,92,255,0.55);
+}
+.brand-name { font-size: 15px; }
+.brand-sub { display: block; font-size: 11px; color: var(--text-faint); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
+
+.nav-links { display: flex; align-items: center; gap: 6px; }
+.nav-links a {
+  font-size: 14px; color: var(--text-dim);
+  padding: 8px 14px; border-radius: 999px;
+  transition: color .2s, background .2s;
+}
+.nav-links a:hover { color: var(--text); background: var(--surface); }
+.nav-cta {
+  font-size: 14px; font-weight: 500;
+  padding: 9px 18px; border-radius: 999px;
+  background: var(--grad-1); color: white !important;
+  box-shadow: 0 8px 24px -10px rgba(124,92,255,0.6);
+  transition: transform .2s, box-shadow .2s;
+}
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 12px 30px -10px rgba(124,92,255,0.75); background: var(--grad-1) !important; }
+.theme-btn {
+  background: var(--surface); color: var(--text); border: 1px solid var(--border);
+  width: 38px; height: 38px; border-radius: 50%;
+  display: grid; place-items: center;
+  transition: background .2s, transform .3s;
+}
+.theme-btn:hover { background: var(--surface-2); transform: rotate(15deg); }
+.menu-btn { display: none; background: transparent; border: 1px solid var(--border); border-radius: 10px; width: 40px; height: 40px; color: var(--text); }
+
+@media (max-width: 880px) {
+  .nav-links { display: none; }
+  .menu-btn { display: grid; place-items: center; }
+  .nav-cta { display: none; }
+}
+
+/* mobile drawer */
+.drawer {
+  position: fixed; inset: 0; z-index: 200; background: color-mix(in oklab, var(--bg) 90%, transparent);
+  backdrop-filter: blur(20px); display: none; flex-direction: column; padding: 80px 28px 28px;
+}
+.drawer.open { display: flex; }
+.drawer a { padding: 14px 0; font-size: 18px; color: var(--text); border-bottom: 1px solid var(--border); }
+.drawer-close { position: absolute; top: 22px; right: 22px; }
+
+/* ---------- containers ---------- */
+section { padding: 110px 28px; position: relative; }
+.wrap { max-width: 1180px; margin: 0 auto; }
+.section-head { margin-bottom: 56px; max-width: 760px; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--accent-2); font-weight: 600;
+  padding: 6px 14px; border-radius: 999px;
+  background: color-mix(in oklab, var(--accent-2) 12%, transparent);
+  border: 1px solid color-mix(in oklab, var(--accent-2) 25%, transparent);
+  margin-bottom: 18px;
+}
+.eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 10px var(--accent-2); }
+h1, h2, h3, h4 { font-family: 'Inter', sans-serif; letter-spacing: -0.02em; line-height: 1.15; margin: 0; }
+h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 700; }
+.section-sub { color: var(--text-dim); font-size: 17px; margin-top: 14px; max-width: 640px; }
+
+/* ---------- hero ---------- */
+.hero { min-height: 100vh; display: grid; place-items: center; padding-top: 140px; padding-bottom: 80px; }
+.hero-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 80px; align-items: center; }
+@media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr; gap: 56px; text-align: left; } }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 14px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--border);
+  font-size: 13px; color: var(--text-dim);
+  margin-bottom: 24px;
+}
+.hero-badge .pulse { width: 8px; height: 8px; border-radius: 50%; background: #29d4c4; box-shadow: 0 0 12px #29d4c4; animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.45; } }
+
+h1.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 6.4vw, 76px);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  margin-bottom: 18px;
+}
+.hero-title .grad {
+  background: var(--grad-1);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero-role { font-size: 18px; color: var(--text-dim); margin-bottom: 22px; font-weight: 500; }
+.hero-role .sep { color: var(--accent); margin: 0 10px; }
+.hero-tag { font-size: 17px; color: var(--text-dim); line-height: 1.7; max-width: 540px; margin-bottom: 32px; }
+
+.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 13px 24px; border-radius: 999px;
+  font-size: 14px; font-weight: 500;
+  transition: transform .2s, box-shadow .2s, background .2s, border-color .2s;
+  border: 1px solid transparent;
+}
+.btn-primary {
+  background: var(--grad-1); color: white;
+  box-shadow: 0 14px 36px -14px rgba(124,92,255,0.55);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 20px 44px -14px rgba(124,92,255,0.75); }
+.btn-ghost {
+  background: var(--surface); color: var(--text); border-color: var(--border-strong);
+}
+.btn-ghost:hover { background: var(--surface-2); transform: translateY(-2px); }
+
+.hero-socials { display: flex; gap: 10px; }
+.hero-socials a {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--surface); border: 1px solid var(--border);
+  display: grid; place-items: center; color: var(--text-dim);
+  transition: all .2s;
+}
+.hero-socials a:hover { color: white; background: var(--grad-1); transform: translateY(-2px); border-color: transparent; }
+
+/* avatar */
+.avatar-wrap { position: relative; justify-self: center; }
+.avatar-ring {
+  position: absolute; inset: -22px; border-radius: 50%;
+  background: conic-gradient(from 0deg, #7c5cff, #29d4c4, #ff7ac6, #7c5cff);
+  filter: blur(28px); opacity: 0.45; animation: spin 14s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.avatar {
+  position: relative;
+  width: clamp(260px, 30vw, 360px);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: var(--bg-3);
+  border: 2px solid var(--border-strong);
+  overflow: hidden;
+  display: grid; place-items: center;
+  box-shadow: 0 30px 80px -20px rgba(0,0,0,0.5);
+}
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+.avatar .initials {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(72px, 12vw, 120px);
+  background: var(--grad-1);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.avatar-tag {
+  position: absolute; bottom: 14px; right: -18px;
+  padding: 10px 16px; border-radius: 14px;
+  background: var(--bg-2); border: 1px solid var(--border);
+  font-size: 12px; color: var(--text-dim);
+  box-shadow: 0 12px 36px -10px rgba(0,0,0,0.4);
+  display: flex; align-items: center; gap: 10px;
+}
+.avatar-tag i { color: var(--accent-2); }
+
+/* metric strip */
+.metrics {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+@media (max-width: 760px) { .metrics { grid-template-columns: repeat(2, 1fr); } }
+.metric {
+  padding: 20px 22px; border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+.metric .num {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px; font-weight: 700;
+  background: var(--grad-1);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  line-height: 1; margin-bottom: 8px;
+}
+.metric .lbl { font-size: 13px; color: var(--text-dim); }
+
+/* ---------- about ---------- */
+.about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; }
+@media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } }
+.about-text p { color: var(--text-dim); font-size: 16.5px; margin: 0 0 18px; }
+.about-text strong { color: var(--text); font-weight: 600; }
+
+.facts-card {
+  padding: 28px; border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+.facts-card h4 { font-size: 13px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 18px; }
+.fact { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed var(--border); font-size: 14px; }
+.fact:last-child { border-bottom: 0; }
+.fact .k { color: var(--text-faint); }
+.fact .v { color: var(--text); font-weight: 500; }
+
+/* research chips */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.chip {
+  padding: 6px 12px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--border);
+  font-size: 12.5px; color: var(--text-dim);
+  transition: all .2s;
+}
+.chip:hover { background: var(--surface-2); color: var(--text); border-color: var(--border-strong); transform: translateY(-1px); }
+
+/* ---------- experience ---------- */
+.timeline { position: relative; padding-left: 28px; }
+.timeline::before {
+  content: ""; position: absolute; top: 8px; bottom: 8px; left: 8px;
+  width: 2px; background: linear-gradient(180deg, var(--accent), var(--accent-2), transparent);
+  border-radius: 1px;
+}
+.tl-item { position: relative; padding: 8px 0 36px; }
+.tl-item::before {
+  content: ""; position: absolute; left: -26px; top: 14px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent) 18%, transparent);
+}
+.tl-item.current::before { background: var(--accent); }
+.tl-date { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 6px; font-weight: 600; }
+.tl-title { font-size: 19px; font-weight: 600; margin-bottom: 4px; }
+.tl-org { font-size: 14px; color: var(--accent-2); margin-bottom: 8px; font-weight: 500; }
+.tl-desc { color: var(--text-dim); font-size: 15px; max-width: 720px; }
+
+/* ---------- publications ---------- */
+.pub-tabs { display: flex; gap: 6px; margin-bottom: 28px; flex-wrap: wrap; }
+.pub-tab {
+  padding: 9px 18px; border-radius: 999px;
+  font-size: 13.5px; font-weight: 500;
+  background: var(--surface); border: 1px solid var(--border);
+  color: var(--text-dim); transition: all .2s;
+}
+.pub-tab.active { background: var(--grad-1); color: white; border-color: transparent; box-shadow: 0 10px 28px -14px rgba(124,92,255,0.6); }
+.pub-tab:hover:not(.active) { background: var(--surface-2); color: var(--text); }
+
+.pub-list { display: flex; flex-direction: column; gap: 16px; }
+.pub {
+  display: grid; grid-template-columns: 64px 1fr auto; gap: 22px;
+  padding: 22px 26px; border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  transition: transform .2s, border-color .2s, background .2s;
+}
+.pub:hover { transform: translateY(-3px); border-color: var(--border-strong); background: var(--surface-2); }
+.pub-num {
+  font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 700;
+  background: var(--grad-1);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+.pub-title { font-size: 16.5px; font-weight: 600; line-height: 1.4; margin-bottom: 8px; }
+.pub-authors { font-size: 13.5px; color: var(--text-dim); margin-bottom: 8px; }
+.pub-authors .me { color: var(--text); font-weight: 600; }
+.pub-meta { font-size: 13px; color: var(--text-faint); display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.pub-meta .journal { color: var(--accent-2); font-style: italic; }
+.pub-tags { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; min-width: 120px; }
+.tag-q1 { background: linear-gradient(135deg, #29d4c4, #08a99a); color: #022; }
+.tag-q2 { background: linear-gradient(135deg, #ffb547, #ff7a47); color: #2a1300; }
+.tag-status { background: var(--surface-2); color: var(--text-dim); border: 1px solid var(--border); }
+.tag {
+  padding: 5px 11px; border-radius: 999px;
+  font-size: 11.5px; font-weight: 700; letter-spacing: 0.04em;
+}
+
+@media (max-width: 760px) {
+  .pub { grid-template-columns: 1fr; gap: 12px; padding: 20px; }
+  .pub-num { font-size: 22px; }
+  .pub-tags { flex-direction: row; align-items: flex-start; }
+}
+
+/* ---------- research focus ---------- */
+.focus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 900px) { .focus-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 580px) { .focus-grid { grid-template-columns: 1fr; } }
+.focus-card {
+  padding: 28px; border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--border);
+  position: relative; overflow: hidden;
+  transition: transform .25s, border-color .25s;
+}
+.focus-card::before {
+  content: ""; position: absolute; inset: 0; opacity: 0;
+  background: var(--grad-1);
+  transition: opacity .25s;
+  z-index: -1;
+}
+.focus-card:hover { transform: translateY(-4px); border-color: var(--border-strong); }
+.focus-icon {
+  width: 50px; height: 50px; border-radius: 14px;
+  background: color-mix(in oklab, var(--accent) 18%, transparent);
+  color: var(--accent);
+  display: grid; place-items: center;
+  font-size: 22px; margin-bottom: 18px;
+  border: 1px solid color-mix(in oklab, var(--accent) 28%, transparent);
+}
+.focus-card h3 { font-size: 18px; margin-bottom: 8px; }
+.focus-card p { color: var(--text-dim); font-size: 14.5px; margin: 0; }
+
+/* ---------- education ---------- */
+.edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 900px) { .edu-grid { grid-template-columns: 1fr; } }
+.edu-card {
+  padding: 28px; border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--border);
+  position: relative;
+  transition: transform .2s, border-color .2s;
+}
+.edu-card:hover { transform: translateY(-3px); border-color: var(--border-strong); }
+.edu-year { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-2); font-weight: 600; margin-bottom: 12px; }
+.edu-deg { font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+.edu-inst { font-size: 14.5px; color: var(--text-dim); margin-bottom: 12px; }
+.edu-grade { font-size: 13px; color: var(--text); background: var(--surface-2); padding: 6px 12px; border-radius: 999px; display: inline-block; border: 1px solid var(--border); }
+
+/* ---------- contact ---------- */
+.contact-card {
+  padding: 50px; border-radius: 24px;
+  background: linear-gradient(135deg, color-mix(in oklab, var(--accent) 12%, transparent), color-mix(in oklab, var(--accent-2) 8%, transparent));
+  border: 1px solid var(--border-strong);
+  text-align: center;
+}
+.contact-card h2 { margin-bottom: 12px; }
+.contact-card p { color: var(--text-dim); font-size: 16.5px; margin-bottom: 28px; max-width: 540px; margin-left: auto; margin-right: auto; }
+.contact-row { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+/* ---------- footer ---------- */
+footer {
+  padding: 40px 28px; text-align: center;
+  border-top: 1px solid var(--border);
+  color: var(--text-faint); font-size: 13.5px;
+}
+footer .heart { color: var(--accent-3); }
+
+/* ---------- reveal animation ---------- */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal.d1 { transition-delay: .08s; }
+.reveal.d2 { transition-delay: .16s; }
+.reveal.d3 { transition-delay: .24s; }
+
+/* scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--surface-2); border-radius: 10px; border: 2px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* selection */
+::selection { background: color-mix(in oklab, var(--accent) 40%, transparent); color: white; }
+</style>
+</head>
+<body>
+
+<div class="bg-aura"></div>
+<div class="bg-grid"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <div class="brand-mark">SA</div>
+      <div>
+        <div class="brand-name">Md. Sadman Anjum Joarder</div>
+        <span class="brand-sub">Researcher · Mechanical Engineer</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+    </div>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+      <a href="#contact" class="nav-cta">Get in touch</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<div class="drawer" id="drawer">
+  <button class="theme-btn drawer-close" id="drawerClose"><i class="fa-solid fa-xmark"></i></button>
+  <a href="#about">About</a>
+  <a href="#research">Research</a>
+  <a href="#publications">Publications</a>
+  <a href="#experience">Experience</a>
+  <a href="#education">Education</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-badge reveal"><span class="pulse"></span> Open to research collaborations · 2026</div>
+      <h1 class="hero-title reveal d1">
+        Md. Sadman <span class="grad">Anjum Joarder</span>
+      </h1>
+      <div class="hero-role reveal d2">
+        Mechanical Engineer <span class="sep">•</span> Researcher <span class="sep">•</span> Educator
+      </div>
+      <p class="hero-tag reveal d2">
+        Researcher working at the intersection of <strong style="color:var(--text)">carbon capture</strong>,
+        <strong style="color:var(--text)">clean energy</strong> and
+        <strong style="color:var(--text)">renewable energy systems</strong>.
+        Author of peer-reviewed work in Springer, Elsevier, Wiley and Taylor &amp; Francis journals,
+        with a focus on translating engineering science into climate solutions for Bangladesh and beyond.
+      </p>
+      <div class="hero-cta reveal d3">
+        <a href="#publications" class="btn btn-primary"><i class="fa-solid fa-book-open"></i> View Publications</a>
+        <a href="#contact" class="btn btn-ghost"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
+      </div>
+      <div class="hero-socials reveal d3">
+        <a href="https://www.linkedin.com/in/md-sadman-anjum-joarder-41425b135/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:sadman.anjum142114@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://scholar.google.com/" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
+        <a href="https://orcid.org/" target="_blank" rel="noopener" aria-label="ORCID"><i class="fa-brands fa-orcid"></i></a>
+        <a href="https://www.researchgate.net/" target="_blank" rel="noopener" aria-label="ResearchGate"><i class="fa-brands fa-researchgate"></i></a>
+      </div>
+    </div>
+    <div class="avatar-wrap reveal d1">
+      <div class="avatar-ring"></div>
+      <div class="avatar">
+        <img src="assets/profile.jpg" alt="Md. Sadman Anjum Joarder"
+             onerror="this.style.display='none'; this.parentNode.querySelector('.initials').style.display='block';" />
+        <span class="initials" style="display:none;">SA</span>
+      </div>
+      <div class="avatar-tag"><i class="fa-solid fa-location-dot"></i> Bangladesh</div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="metrics">
+      <div class="metric reveal"><div class="num">7</div><div class="lbl">Peer-reviewed publications</div></div>
+      <div class="metric reveal d1"><div class="num">5</div><div class="lbl">Manuscripts under review</div></div>
+      <div class="metric reveal d2"><div class="num">Q1</div><div class="lbl">Springer · Elsevier · Wiley</div></div>
+      <div class="metric reveal d3"><div class="num">12+</div><div class="lbl">International co-authors</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">About</span>
+      <h2>An engineer translating research into <span style="background:var(--grad-1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">climate impact</span>.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>
+          I am <strong>Md. Sadman Anjum Joarder</strong>, a mechanical engineer and early-career researcher from
+          Bangladesh. I currently serve as an <strong>Instructor at the Directorate of Technical Education</strong>
+          (9<sup>th</sup> Grade, 43<sup>rd</sup> BCS Non-Cadre) and have been recommended for <strong>Assistant Engineer
+          (Mechanical), Roads and Highways Department</strong> through the 44<sup>th</sup> BCS Cadre.
+        </p>
+        <p>
+          My research sits at the intersection of <strong>carbon dioxide capture, utilization and storage (CCUS)</strong>,
+          <strong>renewable energy systems</strong>, and <strong>techno-economic analysis</strong>
+          of clean-energy technologies. I have authored or co-authored seven peer-reviewed journal articles
+          in Q1/Q2 venues including <em>Environmental Science and Pollution Research</em> (Springer),
+          <em>Separation Science and Technology</em> (Taylor &amp; Francis), <em>Heliyon</em>,
+          <em>Sustainable Chemistry for Climate Action</em>, <em>Innovation and Green Development</em> (all Elsevier),
+          <em>Cleaner Waste Systems</em> and the <em>International Journal of Photoenergy</em> (Wiley).
+        </p>
+        <p>
+          Through my work I aim to make low-carbon transitions <strong>practical for the Global South</strong> —
+          using process simulation, technoeconomic modelling and policy-aware engineering to design
+          carbon capture pathways, recycle PV waste, convert agricultural residue to energy, and accelerate
+          grid-connected solar adoption in institutions across Bangladesh.
+        </p>
+        <div style="margin-top: 20px;">
+          <div style="font-size: 13px; color: var(--text-faint); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px;">Research keywords</div>
+          <div class="chips">
+            <span class="chip">Carbon Capture (CCUS)</span>
+            <span class="chip">CO₂ Separation</span>
+            <span class="chip">Renewable Energy</span>
+            <span class="chip">PV Systems</span>
+            <span class="chip">Biomass &amp; Bioenergy</span>
+            <span class="chip">EV Charging Analytics</span>
+            <span class="chip">Aspen Plus®</span>
+            <span class="chip">RETScreen</span>
+            <span class="chip">E-Waste Management</span>
+            <span class="chip">Sustainability Policy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="facts-card reveal d1">
+        <h4>Quick facts</h4>
+        <div class="fact"><span class="k">Name</span><span class="v">Md. Sadman Anjum Joarder</span></div>
+        <div class="fact"><span class="k">Role</span><span class="v">Instructor (DTE, 43<sup>rd</sup> BCS)</span></div>
+        <div class="fact"><span class="k">Field</span><span class="v">Mechanical Engineering</span></div>
+        <div class="fact"><span class="k">Alma mater</span><span class="v">RUET</span></div>
+        <div class="fact"><span class="k">Location</span><span class="v">Bangladesh</span></div>
+        <div class="fact"><span class="k">Languages</span><span class="v">English · Bangla</span></div>
+        <div class="fact"><span class="k">Status</span><span class="v" style="color:var(--accent-2);">Open to collaborate</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESEARCH FOCUS ============ -->
+<section id="research">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Research focus</span>
+      <h2>Six themes shaping my work</h2>
+      <p class="section-sub">From CO₂ separation chemistry to grid-scale renewable adoption — each strand maps to a concrete decarbonisation lever for emerging economies.</p>
+    </div>
+    <div class="focus-grid">
+      <div class="focus-card reveal">
+        <div class="focus-icon"><i class="fa-solid fa-industry"></i></div>
+        <h3>Carbon Capture &amp; Storage</h3>
+        <p>Reviewing and engineering CCUS pathways — from solvent and membrane separation of industrial flue gases to long-term geological storage.</p>
+      </div>
+      <div class="focus-card reveal d1">
+        <div class="focus-icon"><i class="fa-solid fa-solar-panel"></i></div>
+        <h3>Solar PV Systems</h3>
+        <p>Technoeconomic and environmental analysis of grid-connected institutional PV, plus comparative design studies using RETScreen.</p>
+      </div>
+      <div class="focus-card reveal d2">
+        <div class="focus-icon"><i class="fa-solid fa-leaf"></i></div>
+        <h3>Renewable Energy for Bangladesh</h3>
+        <p>Mapping perspectives, challenges and opportunities for green development across South Asia's high-density grids.</p>
+      </div>
+      <div class="focus-card reveal">
+        <div class="focus-icon"><i class="fa-solid fa-seedling"></i></div>
+        <h3>Biomass &amp; Bioenergy</h3>
+        <p>Simulating biocrude production from microalgae (P. tricornutum, S. platensis, C. vulgaris) and converting agricultural residue into watts.</p>
+      </div>
+      <div class="focus-card reveal d1">
+        <div class="focus-icon"><i class="fa-solid fa-bolt"></i></div>
+        <h3>EV &amp; Smart Energy</h3>
+        <p>Multi-parameter operational anomaly detection in EV charging infrastructure for safer, more reliable e-mobility.</p>
+      </div>
+      <div class="focus-card reveal d2">
+        <div class="focus-icon"><i class="fa-solid fa-recycle"></i></div>
+        <h3>Waste &amp; Circular Economy</h3>
+        <p>PV module end-of-life recycling and e-waste policy strategies — engineering solutions for pollution prevention.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PUBLICATIONS ============ -->
+<section id="publications">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Publications</span>
+      <h2>Peer-reviewed research</h2>
+      <p class="section-sub">A growing body of work published with Springer, Elsevier, Wiley and Taylor &amp; Francis — plus five manuscripts currently under peer review at IEEE Access and other Q1 venues.</p>
+    </div>
+
+    <div class="pub-tabs reveal">
+      <button class="pub-tab active" data-tab="published">Published <span style="opacity:.7;">· 7</span></button>
+      <button class="pub-tab" data-tab="review">Under Review <span style="opacity:.7;">· 5</span></button>
+      <button class="pub-tab" data-tab="all">All</button>
+    </div>
+
+    <div class="pub-list" id="pubList">
+
+      <!-- PUBLISHED -->
+      <article class="pub reveal" data-cat="published">
+        <div class="pub-num">01</div>
+        <div>
+          <div class="pub-title">A comprehensive review of carbon dioxide capture, transportation, utilization, and storage: a source of future energy</div>
+          <div class="pub-authors"><span class="me">Joarder, M. S. A.</span>, Islam, M. S., Hasan, M. H., Kutub, A., Kabir, M. F., Rashid, F., &amp; Joarder, T. A.</div>
+          <div class="pub-meta"><span class="journal">Environmental Science and Pollution Research</span> · 2025 · 1–34</div>
+        </div>
+        <div class="pub-tags"><span class="tag tag-q1">Q1 · Springer</span></div>
+      </article>
+
+      <article class="pub reveal" data-cat="published">
+        <div class="pub-num">02</div>
+        <div>
+          <div class="pub-title">A prospective approach to separate industrial carbon dioxide and flue gases</div>
+          <div class="pub-authors"><span class="me">Joarder, M. S. A.</span>, Rashid, F., Abir, M. A., &amp; Zakir, M. G.</div>
+          <div class="pub-meta"><span class="journal">Separation Science and Technology</span> · 2023 · 58(10), 1795–1805</div>
+        </div>
+        <div class="pub-tags"><span class="tag tag-q2">Q2 · Taylor &amp; Francis</span></div>
+      </article>
+
+      <article class="pub reveal" data-cat="published">
+        <div class="pub-num">03</div>
+        <div>
+          <div class="pub-title">CO₂ Separation Technologies: Clean Energy Solutions for Greening Environment</div>
+          <div class="pub-authors"><span class="me">Joarder, M. S. A.</span>, Kabir, M. F., Hasan, M. H., Islam, M. S., &amp; Kutub, A.</div>
+          <div class="pub-meta"><span class="journal">Sustainable Chemistry for Climate Action</span> · 2025 · 100168</div>
+        </div>
+        <div class="pub-tags"><span class="tag tag-q1">Q1 · Elsevier</span></div>
+      </article>
+
+      <article class="pub reveal" data-cat="published">
+        <div class="pub-num">04</div>
+        <div>
+          <div class="pub-title">Renewable energy resources for green development in Bangladesh: Perspectives, challenges, and opportunities</div>
+          <div class="pub-authors">Raihan, A., <span class="me">Joarder, M. S. A.</span>, Rahman, S. M., Bari, A. M., Ridwan, M., &amp; Sarker, T.</div>
+          <div class="pub-meta"><span class="journal">Innovation and Green Development</span> · 2025 · 4(5), 100298</div>
+        </div>
+        <div class="pub-tags"><span class="tag tag-q1">Q1 · Elsevier</span></div>
+      </article>
+
+      <article class="pub reveal" data-cat="published">
+        <div class="pub-num">05</div>
+        <div>
+          <div class="pub-title">Technoeconomic and Environmental Analysis of Institutional Grid-Connected PV Systems</div>
+          <div class="pub-authors">Islam, F., Ali, M. Y., <span class="me">Joarder, M. S. A.</span>, Islam, M. M., Habib, M. A., Akhtar, S., … &amp; Al Asif, A.</div>
+          <div class="pub-meta"><span class="journal">International Journal of Photoenergy</span> · 2025 · 5222213</div>
+        </div>
+        <div class="pub-tags"><span class="tag tag-q2">Q2 · Wiley</span></div>
+      </article>
+
+      <article class="pub reveal" data-cat="published">
+        <div class="pub-num">06</div>
+        <div>
+          <div class="pub-title">E-Waste Management in Bangladesh: Environmental Impacts, Health Risks, and Sustainable Policy Strategies</div>
+          <div class="pub-authors">Islam, M. S., Hasan, M. R., Mostakim, K., <span class="me">Joarder, M. S. A.</span>, Hasan, M. H., &amp; Ahmed, M. R.</div>
+          <div class="pub-meta"><span class="journal">Cleaner Waste Systems</span> · 2025 · 100297</div>
+        </div>
+        <div class="pub-tags"><span class="tag tag-q2">Q2 · Elsevier</span></div>
+      </article>
+
+      <article class="pub reveal" data-cat="published">
+        <div class="pub-num">07</div>
+        <div>
+          <div class="pub-title">Simulation of biocrude production from P. tricornutum, S. platensis, and C. vulgaris using Aspen Plus®</div>
+          <div class="pub-authors">Tushar, M. S. H., Islam, M. S., Ahmmed, T., &amp; <span class="me">Joarder, M. S. A.</span></div>
+          <div class="pub-meta"><span class="journal">Heliyon</span> · 2024 · 10(17)</div>
+        </div>
+        <div class="pub-tags"><span class="tag tag-q1">Q1 · Elsevier</span></div>
+      </article>
+
+      <!-- UNDER REVIEW -->
+      <article class="pub reveal" data-cat="review" style="display:none;">
+        <div class="pub-num">08</div>
+        <div>
+          <div class="pub-title">Carbon Capture and Conversion: A Potential Game Changer for Clean Energy</div>
+          <div class="pub-authors"><span class="me">Joarder, M. S. A.</span>, Hasibul Hasan &amp; Monjur Mourshed</div>
+          <div class="pub-meta"><span class="journal">Journal of CO₂ Utilization</span></div>
+        </div>
+        <div class="pub-tags"><span class="tag tag-q1">Q1 · Elsevier</span><span class="tag tag-status">Under review</span></div>
+      </article>
+
+      <article class="pub reveal" data-cat="review" style="display:none;">
+        <div class="pub-num">09</div>
+        <div>
+          <div class="pub-title">Waste to Watts: Revolutionizing Bangladesh's Energy Future Through Agricultural Residue Conversion</div>
+          <div class="pub-authors"><span class="me">Joarder, M. S. A.</span>, Kibria, M. G., Hasan, A., Shajid, S. R., Mohtasim, M. S., &amp; Hossain, M. S.</div>
+          <div class="pub-meta"><span class="journal">Biomass &amp; Bioenergy</span></div>
+        </div>
+        <div class="pub-tags"><span class="tag tag-q1">Q1 · Elsevier</span><span class="tag tag-status">Under review</span></div>
+      </article>
+
+      <article class="pub reveal" data-cat="review" style="display:none;">
+        <div class="pub-num">10</div>
+        <div>
+          <div class="pub-title">PV Waste Materials' Recycling in Bangladesh: Solution to Pollution</div>
+          <div class="pub-authors">Murshed, I., <span class="me">Joarder, M. S. A.</span>, Tanam, T., Islam, F., &amp; Hasan, M.</div>
+          <div class="pub-meta"><span class="journal">Environmental Progress and Sustainable Energy</span></div>
+        </div>
+        <div class="pub-tags"><span class="tag tag-q1">Q1 · Wiley</span><span class="tag tag-status">Under review</span></div>
+      </article>
+
+      <article class="pub reveal" data-cat="review" style="display:none;">
+        <div class="pub-num">11</div>
+        <div>
+          <div class="pub-title">Operational Anomaly Detection in EV Charging Systems using Multi-Parameter Data Analysis</div>
+          <div class="pub-authors">Murshed, I., Islam, F., <span class="me">Joarder, M. S. A.</span>, Islam, M. M., &amp; Ali, M. Y.</div>
+          <div class="pub-meta"><span class="journal">IEEE Access</span></div>
+        </div>
+        <div class="pub-tags"><span class="tag tag-q1">Q1 · IEEE</span><span class="tag tag-status">Under review</span></div>
+      </article>
+
+      <article class="pub reveal" data-cat="review" style="display:none;">
+        <div class="pub-num">12</div>
+        <div>
+          <div class="pub-title">Optimizing PV System Design with RETScreen: A Comparative Analysis of High-Performance and Lower Collector Area Modules</div>
+          <div class="pub-authors">Islam, M. M., Rafat, A., Islam, F., &amp; <span class="me">Joarder, M. S. A.</span></div>
+          <div class="pub-meta"><span class="journal">International Journal of Photoenergy</span></div>
+        </div>
+        <div class="pub-tags"><span class="tag tag-q2">Q2 · Wiley</span><span class="tag tag-status">Under review</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Experience</span>
+      <h2>Professional journey</h2>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl-item current">
+        <div class="tl-date">Present</div>
+        <div class="tl-title">Instructor — Directorate of Technical Education</div>
+        <div class="tl-org">9<sup>th</sup> Grade · 43<sup>rd</sup> BCS (Non-Cadre)</div>
+        <div class="tl-desc">Teaching and curriculum delivery in technical education while continuing active research in carbon capture, renewable energy and sustainability.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Recommended</div>
+        <div class="tl-title">Assistant Engineer (Mechanical) — Roads and Highways Department</div>
+        <div class="tl-org">44<sup>th</sup> BCS Cadre</div>
+        <div class="tl-desc">Recommended for appointment to the cadre service in mechanical engineering for national infrastructure projects.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2017 — Present</div>
+        <div class="tl-title">Researcher &amp; Author</div>
+        <div class="tl-org">Independent · with collaborators across RUET, KUET, BRAC and international groups</div>
+        <div class="tl-desc">Seven Q1/Q2 publications and five manuscripts under review spanning CCUS, biomass conversion, institutional PV, EV charging analytics and renewable-energy policy for Bangladesh.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section id="education">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Education</span>
+      <h2>Academic background</h2>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div class="edu-year">B.Sc. in Engineering</div>
+        <div class="edu-deg">Mechanical Engineering</div>
+        <div class="edu-inst">Rajshahi University of Engineering &amp; Technology (RUET)</div>
+        <span class="edu-grade">CGPA 3.23 / 4.00</span>
+      </div>
+      <div class="edu-card reveal d1">
+        <div class="edu-year">HSC · 2014</div>
+        <div class="edu-deg">Higher Secondary Certificate</div>
+        <div class="edu-inst">Jhenidah Cadet College · Jashore Board</div>
+        <span class="edu-grade">GPA 5.00 (Golden) · 53<sup>rd</sup> in Board</span>
+      </div>
+      <div class="edu-card reveal d2">
+        <div class="edu-year">SSC · 2012</div>
+        <div class="edu-deg">Secondary School Certificate</div>
+        <div class="edu-inst">Jhenidah Cadet College · Jashore Board</div>
+        <span class="edu-grade">GPA 5.00 (Golden) · Secondary Scholarship</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <span class="eyebrow">Contact</span>
+      <h2>Let's collaborate on the energy transition.</h2>
+      <p>I welcome research collaborations, co-authorship invitations, supervision discussions and conversations about clean-energy policy for the Global South.</p>
+      <div class="contact-row">
+        <a href="mailto:sadman.anjum142114@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> sadman.anjum142114@gmail.com</a>
+        <a href="https://www.linkedin.com/in/md-sadman-anjum-joarder-41425b135/" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+        <a href="tel:+8801931966914" class="btn btn-ghost"><i class="fa-solid fa-phone"></i> +880 1931-966914</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    © <span id="year"></span> Md. Sadman Anjum Joarder · Built with <span class="heart">♥</span> for open research ·
+    <a href="#top" style="color:var(--accent-2);">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+// year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// sticky nav
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+document.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+// reveal on scroll
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// theme toggle
+const themeBtn = document.getElementById('themeBtn');
+const setTheme = t => {
+  document.documentElement.setAttribute('data-theme', t);
+  themeBtn.innerHTML = t === 'light' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+};
+const initialTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+setTheme(initialTheme);
+themeBtn.addEventListener('click', () => {
+  const cur = document.documentElement.getAttribute('data-theme');
+  setTheme(cur === 'light' ? 'dark' : 'light');
+});
+
+// mobile drawer
+const drawer = document.getElementById('drawer');
+document.getElementById('menuBtn').addEventListener('click', () => drawer.classList.add('open'));
+document.getElementById('drawerClose').addEventListener('click', () => drawer.classList.remove('open'));
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => drawer.classList.remove('open')));
+
+// publication tabs
+const tabs = document.querySelectorAll('.pub-tab');
+const pubs = document.querySelectorAll('#pubList .pub');
+tabs.forEach(t => t.addEventListener('click', () => {
+  tabs.forEach(x => x.classList.remove('active'));
+  t.classList.add('active');
+  const cat = t.dataset.tab;
+  pubs.forEach(p => {
+    if (cat === 'all') p.style.display = '';
+    else p.style.display = p.dataset.cat === cat ? '' : 'none';
+  });
+}));
+</script>
+</body>
+</html>
